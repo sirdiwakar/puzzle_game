@@ -53,7 +53,7 @@
             <div class="window-ver"></div>
             <div class="sofa"></div>
             <div class="coffee-table"></div>
-            <div class="tv-set"></div>
+            <div class="tv-set" onclick="fun()"></div>
             <h1 style="margin-left: -50px; margin-top: 50px">ROOM 23</h1>
             <div class="name">Living Room</div>
         </div>
@@ -100,6 +100,12 @@
             <div class="patio-chair"></div>
         </div>
     </div>
+    <script>
+        const aud = new Audio("/public/sounds/clue.wav")
+        function fun(){
+            aud.play();
+        }
+    </script>
 </body>
 </html>
 <!-- one is two and two is one -->
