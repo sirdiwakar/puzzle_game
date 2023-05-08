@@ -24,6 +24,18 @@ app.get("/auth", (req, res) => {
   res.sendFile(path.join(__dirname, "templates", "auth.html"));
 })
 
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "templates", "aboutus.html"));
+})
+
+app.get("/tic-tac-toe", (req, res) => {
+  res.sendFile(path.join(__dirname, "templates", "tic-tac-toe.html"));
+})
+
+app.get("/password", (req, res) => {
+  res.sendFile(path.join(__dirname, "templates", "password-input.html"));
+})
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
