@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define the rooms and their corresponding labels
   var rooms = [
-    { value: "1", label: "Room 1" },
     { value: "2", label: "Room 2" },
     { value: "3", label: "Room 3" },
     { value: "4", label: "Room 4" },
@@ -43,9 +42,23 @@ document.getElementById("room-form").addEventListener("submit", function (e) {
     return;
   }
 
-  // Perform further processing (replace with your own logic)
-  console.log("Selected room:", room);
-  console.log("Entered password:", password);
+  fetch("/validate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      room: room,
+      password: password,
+    }),
+  }).then(function (response) {
+    if (response.status === 200) {
+      // Redirect to the room
+      window.location.href = `/room/${room}`;
+    } else {
+      alert("Incorrect password");
+    }
+  });
 
   // Reset the form
   document.getElementById("room-form").reset();

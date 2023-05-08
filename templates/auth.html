@@ -12,12 +12,12 @@
       </div>
       <form id="login-form">
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
+          <label for="login-username">Username:</label>
+          <input type="text" id="login-username" required>
         </div>
         <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" required>
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn">Login</button>
@@ -31,16 +31,20 @@
       </div>
       <form id="registration-form">
         <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" required>
+          <label for="registration-name">Name:</label>
+          <input type="text" id="registration-name" required>
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
+          <label for="registration-email">Email:</label>
+          <input type="email" id="registration-email" required>
         </div>
         <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" required>
+          <label for="registration-password1">Password1:</label>
+          <input type="password" id="registration-password1" required>
+        </div>
+        <div class="form-group">
+          <label for="registration-password2">Password2:</label>
+          <input type="password" id="registration-password2" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn">Register</button>
@@ -49,6 +53,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="/js/auth.js"></script>
 </body>
 </html>
