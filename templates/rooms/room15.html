@@ -3,7 +3,20 @@
 
 <head>
     <title>House Layout</title>
-    <link rel="stylesheet" href="../allcssfiles/room1.css">
+    <link rel="stylesheet" href="/css/room1.css">
+    <style>
+        #tunnel{
+            width: 20%;
+            height: 20%;
+            border: 5px solid black;
+            border-radius: 50% 100%;
+            position: relative;
+            top: 20%;
+            left: 20%;
+            background-color: black;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +28,7 @@
         </div>
         <div class="kitchen">
             <div class="ref"></div>
-            <div class="rug"></div>
+            <div class="rug" onclick="fun()"><a href="/public/images/wor.png"><div id="tunnel"></div></a></div>
             <div class="cabinets">
                 <div class="stove"></div>
             </div>
@@ -54,7 +67,7 @@
             <div class="sofa"></div>
             <div class="coffee-table"></div>
             <div class="tv-set"></div>
-            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 23</h1>
+            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 03</h1>
             <div class="name">Living Room</div>
         </div>
         <div class="bedroom-1">
@@ -100,6 +113,11 @@
             <div class="patio-chair"></div>
         </div>
     </div>
+    <script>
+        function fun() {
+            var ele = document.getElementById("tunnel");
+            ele.style.display = "block";
+        }
+    </script>
 </body>
 </html>
-<!-- one is two and two is one -->

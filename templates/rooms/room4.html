@@ -3,7 +3,13 @@
 
 <head>
     <title>House Layout</title>
-    <link rel="stylesheet" href="../allcssfiles/room1.css">
+   
+    <link rel="stylesheet" href="/css/room1.css">
+    <style>
+        #hell #heaven{
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +30,9 @@
                 <div class="sink-tap-2"></div>
             </div>
             <div class="island">
-                <div class="chair"></div>
+                <a href="puzzle.html">
+                    <div class="chair"></div>
+                </a>
             </div>
             <div class="name">Kitchen</div>
         </div>
@@ -33,9 +41,11 @@
             <div class="door-hor sliding-effect"></div>
             <div class="shower"></div>
             <div class="toilet"></div>
-            <div class="vanity"></div>
-            <div class="rug"></div>
-            <div class="name">Bath #1</div>
+            <div class="vanity">
+            </div>
+            <div class="rug sliding-effect"></div>
+            <div class="name" id="hell" onclick="myfunc1()">Bath #1</div>
+
         </div>
         <div class="bedroom-2">
             <div class="door-ver"></div>
@@ -50,11 +60,11 @@
         </div>
         <div class="living-room">
             <div class="rug"></div>
-            <div class="window-ver "></div>
+            <div class="window-ver"></div>
             <div class="sofa"></div>
             <div class="coffee-table"></div>
             <div class="tv-set"></div>
-            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 11</h1>
+            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 10</h1>
             <div class="name">Living Room</div>
         </div>
         <div class="bedroom-1">
@@ -82,7 +92,7 @@
             <div class="bathtub"></div>
             <div class="vanity"></div>
             <div class="toilet"></div>
-            <div class="name">Bath #2</div>
+            <div class="name" id="heaven" onclick="myfunc2()">Bath #2</div>
         </div>
         <div class="office">
             <div class="door-hor"></div>
@@ -99,6 +109,17 @@
             <div class="patio-chair"></div>
             <div class="patio-chair"></div>
         </div>
+       <script>
+        const hell = document.getElementById("hell");
+        function myfunc1(){
+            hell.innerHTML=`<a href="room11.html" text-decoration="none">33</a>`;
+        }
+        const heaven = document.getElementById("heaven");
+        function myfunc2(){
+            heaven.innerHTML=`<a href="room10.html" text-decoration="none">22</a>`;
+        }
+       </script>
     </div>
 </body>
+
 </html>

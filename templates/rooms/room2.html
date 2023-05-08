@@ -3,31 +3,14 @@
 
 <head>
     <title>House Layout</title>
-    <link rel="stylesheet" href="../allcssfiles/room1.css">
+    <link rel="stylesheet" href="/css/room1.css">
     <style>
-        #mypara{
+        #string{
             position: absolute;
-            top:10px;
-            right: 30px;
-            z-index: -1;
+            top: 120px;
+            display: inline;
+            width: 175px;
         }
-        #link1{
-            position: absolute;
-            top: 8px;
-            z-index: -1;
-        }
-        #link2{
-            width: 100%;
-            height: 100%;
-            position: block;
-            background-color: lightpink;
-        }
-        #anch{
-            z-index: -1;
-            position: absolute;
-            top: 2px;
-            text-decoration: none;
-        }   
     </style>
 </head>
 
@@ -76,25 +59,22 @@
         <div class="living-room">
             <div class="rug"></div>
             <div class="window-ver"></div>
-            <div class="sofa" onclick="myfunc()"><div id="mypara">get 3:5</div></div>
+            <div class="sofa"></div>
             <div class="coffee-table"></div>
-            <div class="tv-set" id="myDiv"></div>
-            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 30</h1>
+            <div class="tv-set"></div>
+            <h1 style="margin-left: -50px; margin-top: 50px">ROOM 02</h1>
             <div class="name">Living Room</div>
         </div>
         <div class="bedroom-1">
+            <div id="string">the additional string is "What comes after E and before ant?"</div>
             <div class="rug"></div>
             <div class="door-hor"></div>
             <div class="window-hor sliding-effect"></div>
-            <div class="bed">
+            <div class="bed" id="moving-bed" onclick="myfunc()">
                 <div class="blanket sliding-effect"></div>
                 <div class="pillow sliding-effect"></div>
                 <div class="pillow sliding-effect"></div>
             </div>
-            
-            <div class="bed-table reverse-sliding-effect"><div id="link2"></div><a href="room8.html" id="anch">32</a></div>
-            <div class="bed-table reverse-sliding-effect"><a href="room9.html" id="link1">12</a></div>
-            
             <div class="name">Master Bedroom</div>
         </div>
         <div class="closet">
@@ -104,7 +84,9 @@
         <div class="bathroom-1">
             <div class="door-ver"></div>
             <div class="door-ver"></div>
-            <div class="window-hor sliding-effect"></div>
+            <div class="window-hor sliding-effect">
+            </div>
+            <div class="clue">the key to room 1010 has no edges</div>
             <div class="rug sliding-effect"></div>
             <div class="bathtub"></div>
             <div class="vanity"></div>
@@ -128,33 +110,10 @@
         </div>
     </div>
     <script>
-        var div = document.getElementById("myDiv");
-        var colors = ["white", "red", "purple", "yellow"];
-        var currentIndex = 0;
-
-        div.addEventListener("click", function () {
-            currentIndex++;
-            if (currentIndex > 3) {
-                currentIndex = 0;
-            }
-            div.style.backgroundColor = colors[currentIndex];
-        });
-    </script>
-    <script>
-         function myfunc(){
-            var ele = document.getElementById("mypara");
-            ele.style.zIndex = 1;
-            console.log(ele);
-        }
-        var elem = document.getElementById("link2");
-
-        elem.addEventListener("mouseover", fun);
-        function fun(){
-            var ele = document.getElementById("anch");
-            ele.style.zIndex = 2;
+        const bal = document.getElementById("moving-bed");
+        function myfunc(){
+            bal.style.top = "8px";
         }
     </script>
 </body>
-
 </html>
-<!-- watch me -->
