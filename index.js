@@ -51,31 +51,36 @@ app.get("/user-info", restrictUsers, async (req, res) => {
     });
 
     res.json(response.data);
-  } catch(e) {
-    console.log(e)
+  } catch (e) {
+    console.log(e);
     console.log("Error getting user info");
     res.redirect("/auth");
   }
 });
 
 app.post("/validate", restrictUsers, async (req, res) => {
-  data= req.body;
+  data = req.body;
   token = req.cookies.token;
   try {
-    resp = await axios.post("http://localhost:8000/core/validate_room", req.body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        ContentType: "application/json"
+    resp = await axios.post(
+      "http://localhost:8000/core/validate_room",
+      req.body,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          ContentType: "application/json",
+        },
       }
-    })
+    );
     data = resp.data;
-    if (!data["valid"]) res.json({success: false, message: "Invalid password"}, 404)
-    else res.json({success: true, message: "Valid password"}, 200)
-  } catch(e) {
-    console.log(e)
-    res.json({success: false, message: "Error validating password"}, 500)
+    if (!data["valid"])
+      res.json({ success: false, message: "Invalid password" }, 404);
+    else res.json({ success: true, message: "Valid password" }, 200);
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false, message: "Error validating password" }, 500);
   }
-})
+});
 
 app.post("/register", async (req, res) => {
   try {
@@ -85,14 +90,14 @@ app.post("/register", async (req, res) => {
       req.body,
       { headers: { "Content-Type": "application/json" } }
     );
-      if (backendResponse.status !== 201) {
-        // Handle any error that occurred during the registration process
-        console.error("Registration error:", backendResponse.data.message);
-        return res
-          .status(500)
-          .json({ success: false, message: "Registration failed" });
-      }
-      
+    if (backendResponse.status !== 201) {
+      // Handle any error that occurred during the registration process
+      console.error("Registration error:", backendResponse.data.message);
+      return res
+        .status(500)
+        .json({ success: false, message: "Registration failed" });
+    }
+
     // Return a success response to the HTML file
     res.json({ success: true, message: "Registration successful" });
   } catch (error) {
@@ -105,7 +110,25 @@ app.post("/register", async (req, res) => {
     }
     res.status(500).json({ success: false, message: "Registration failed" });
   }
-})
+});
+
+app.get("/game_over", restrictUsers, async (req, res) => {
+  try {
+    resp = await axios.get("http://localhost:8000/core/game_over", {
+      headers: {
+        Authorization: `Bearer ${req.cookies.token}`,
+      },
+    });
+    console.log(resp.data)
+    res.json(resp.data);
+  } catch (e) {
+    console.log(e);
+    res.json(
+      { success: false, message: "Error getting game over status" },
+      500
+    );
+  }
+});
 
 // Route for serving the main.html file
 app.get("/", restrictUsers, (req, res) => {
