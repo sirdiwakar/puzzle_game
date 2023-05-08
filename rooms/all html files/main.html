@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="../allcssfiles/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Puzzle Game</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link popup" onclick="myFunction()" href="#">
+                        story
+                        <span class="popuptext" id="myPopup">
+                            You are THE CAPTAIN JACK SPARROW, bored of sea adventures,
+                            you have decided to find treasure at the magical modern 
+                            universe, currently you are at room 00. Find clues to reach 
+                            to treasure.Search for clues carefully in the room think
+                            outside the room. the rooms contain magical objects which can take you to the
+                            other rooms some objects need magical spells as passwords which you need to find.
+                            !! CAREFUL some tunnels lead to hell......... 
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="room1.html">Rules </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section>
+        <div class="boxing">
+            <a href="room1.html" class="first">00</a>
+            <a href="room2.html">01</a>
+            <a href="room3.html">02</a>
+            <a href="room4.html">03</a>
+            <a href="room5.html">10</a>
+            <a href="room6.html">11</a>
+            <a href="room7.html">12</a>
+            <a href="room8.html">13</a>
+            <a href="room9.html">20</a>
+            <a href="room10.html">21</a>
+            <a href="room11.html">22</a>
+            <a href="room12.html">23</a>
+            <a href="room13.html">30</a>
+            <a href="room14.html">31</a>
+            <a href="room15.html">32</a>
+            <a href="room16.html">33</a>
+        </div>
+    </section>
+    <script>
+        // When the user clicks on div, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

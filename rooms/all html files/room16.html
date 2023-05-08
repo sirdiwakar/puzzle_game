@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Congratulations!</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    .stars {
+      background: url("../public/images/star.png") repeat;
+      animation: twinkling 10s infinite;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .congratulations {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+    }
+
+    @keyframes twinkling {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 10000px 5000px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="congratulations">
+    <p>Congratulations!</p>
+    <p>YOU HAVE FOUND ONE OF THE TREASURES.</p>
+  </div>
+  <script>
+    // JS code
+    function glowStars() {
+      const stars = document.querySelector('.stars');
+      const colors = ['#ffdd00', '#00ffdd', '#dd00ff', '#ff00dd', '#ddff00', '#00ddff'];
+      let index = 0;
+      setInterval(() => {
+        stars.style.backgroundColor = colors[index % colors.length];
+        index++;
+      }, 1000);
+    }
+
+    glowStars();
+  </script>
+</body>
+</html>
