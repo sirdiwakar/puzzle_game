@@ -3,22 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define the rooms and their corresponding labels
   var rooms = [
-    { value: "1", label: "Room 1" },
-    { value: "2", label: "Room 2" },
-    { value: "3", label: "Room 3" },
-    { value: "4", label: "Room 4" },
-    { value: "5", label: "Room 5" },
-    { value: "6", label: "Room 6" },
-    { value: "7", label: "Room 7" },
-    { value: "8", label: "Room 8" },
-    { value: "9", label: "Room 9" },
-    { value: "10", label: "Room 10" },
-    { value: "11", label: "Room 11" },
-    { value: "12", label: "Room 12" },
-    { value: "13", label: "Room 13" },
-    { value: "14", label: "Room 14" },
-    { value: "15", label: "Room 15" },
-    { value: "16", label: "Room 16" },
+    { value: "2", label: "Room 02" },
+    { value: "3", label: "Room 13" },
+    { value: "4", label: "Room 10" },
+    { value: "5", label: "Room 23" },
+    { value: "6", label: "Room 30" },
+    { value: "7", label: "Room 31" },
+    { value: "8", label: "Room 32" },
+    { value: "9", label: "Room 12" },
+    { value: "10", label: "Room 22" },
+    { value: "11", label: "Room 33" },
+    { value: "12", label: "Room 21" },
+    { value: "13", label: "Room 1" },
+    { value: "14", label: "Room 11" },
+    { value: "15", label: "Room 3" },
+    { value: "16", label: "Room 20" },
   ];
 
   // Populate the dropdown options
@@ -43,9 +42,23 @@ document.getElementById("room-form").addEventListener("submit", function (e) {
     return;
   }
 
-  // Perform further processing (replace with your own logic)
-  console.log("Selected room:", room);
-  console.log("Entered password:", password);
+  fetch("/validate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      room: room,
+      password: password,
+    }),
+  }).then(function (response) {
+    if (response.status === 200) {
+      // Redirect to the room
+      window.location.href = `/room/${room}`;
+    } else {
+      alert("Incorrect password");
+    }
+  });
 
   // Reset the form
   document.getElementById("room-form").reset();

@@ -101,7 +101,18 @@
             <div class="patio-chair"></div>
         </div>
     </div>
+    <script>
+        // Get user info from express
+        let room = 1
+        fetch('/user-info')
+            .then(response => response.json())
+            .then(data => {
+                if (room != 1 && !data.cleared_rooms.includes(room.toString()))
+                    window.location.href = "/password";
+            });
+    </script>
 </body>
+
 </html>
 
 <!-- flag: the long neck guy knows the way to 23 the key has 2 concatenated strings "e" is common......  -->

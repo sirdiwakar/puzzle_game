@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <h1 id="game-over-text" style="text-align:center"></h1>
     <div class="main-content">
         <div class="door-hor"></div>
         <div class="utility">
@@ -100,5 +101,27 @@
             <div class="patio-chair"></div>
         </div>
     </div>
+    <script>
+        // Get user info from express
+        let room = 8
+        fetch('/user-info')
+            .then(response => response.json())
+            .then(data => {
+                if (room != 1 && !data.cleared_rooms.includes(room.toString()))
+                    window.location.href = "/password";
+            });
+    </script>
+    <script>
+        fetch("/game_over")
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === "Game over") {
+                    document.getElementById("game-over-text").innerHTML = "Game Over";
+                    setTimeout(() => {
+                        window.location.href = "/";
+                    }, 3000);
+                }
+            });
+    </script>
 </body>
 </html>

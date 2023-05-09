@@ -106,6 +106,16 @@
             aud.play();
         }
     </script>
+    <script>
+        // Get user info from express
+        let room = 5
+        fetch('/user-info')
+            .then(response => response.json())
+            .then(data => {
+                if (room != 1 && !data.cleared_rooms.includes(room.toString()))
+                    window.location.href = "/password";
+            });
+    </script>
 </body>
 </html>
 <!-- one is two and two is one -->

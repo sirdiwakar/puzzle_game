@@ -89,7 +89,7 @@
         </div>
         <div class="closet">
             <div class="wall-gap"></div>
-            <div class="name" id="cover" onclick="fun()"><a href="tic-tac-toe.html" id="puzzle"><div id="tunnel"></div></a></div>
+            <div class="name" id="cover" onclick="fun()"><a href="/tic-tac-toe" id="puzzle"><div id="tunnel"></div></a></div>
         </div>
         <div class="bathroom-1">
             <div class="door-ver"></div>
@@ -121,6 +121,16 @@
                 var ele = document.getElementById("puzzle");
                 ele.style.display = "block";
             }
+        </script>
+        <script>
+            // Get user info from express
+            let room = 7
+            fetch('/user-info')
+                .then(response => response.json())
+                .then(data => {
+                    if (room != 1 && !data.cleared_rooms.includes(room.toString()))
+                        window.location.href = "/password";
+                });
         </script>
     </div>
 </body>
