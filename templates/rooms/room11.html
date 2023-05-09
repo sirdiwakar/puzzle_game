@@ -4,8 +4,34 @@
 <head>
     <title>House Layout</title>
     <link rel="stylesheet" href="/css/room1.css">
-</head>
+    <style>
+        #c{
+            position: absolute;
+            top: 35px;
+            left: 80px;
+        }
+        #h{
+            position: absolute;
+            top: 15px;
+            left: 120px;
+        }
+        #A{
+            position: absolute;
+            top: 70px;
+            right: 20px;
+        }
+        #N{
+            position: absolute;
+            top: 25px;
+            left: 80px;
+        }
+        .G{
+            background-color: rgba(255, 193, 7, 0.25);
+            border-radius: 50%;
 
+        }
+    </style>
+</head>
 <body>
     <div class="main-content">
         <div class="door-hor"></div>
@@ -24,7 +50,8 @@
                 <div class="sink-tap-2"></div>
             </div>
             <div class="island">
-                <div class="chair"></div>
+                <p id="c">c</p>
+                <div class="chair sliding-effect"></div>
             </div>
             <div class="name">Kitchen</div>
         </div>
@@ -42,11 +69,12 @@
             <div class="window-hor sliding-effect"></div>
             <div class="bed-table"></div>
             <div class="bed">
+                <div id="h">h</div>
                 <div class="blanket sliding-effect"></div>
                 <div class="pillow sliding-effect"></div>
             </div>
             <div class="table"></div>
-            <div class="name">Guest Bedroom</div>
+            <div class="name"><span class="G">G</span>uest B<span class="G">e</span>droom</div>
         </div>
         <div class="living-room">
             <div class="rug"></div>
@@ -62,6 +90,7 @@
             <div class="door-hor"></div>
             <div class="window-hor sliding-effect"></div>
             <div class="bed">
+                <div id="A">A</div>
                 <div class="blanket sliding-effect"></div>
                 <div class="pillow sliding-effect"></div>
                 <div class="pillow sliding-effect"></div>
@@ -93,12 +122,14 @@
         <div class="patio">
             <div class="door-sliding sliding-effect"></div>
             <div class="real-patio">
+                <div id="N">N</div>
                 <div class="name">balcony</div>
             </div>
-            <div class="patio-table"></div>
-            <div class="patio-chair"></div>
+            <div class="patio-table reverse-sliding-effect"></div>
+            <div class="patio-chair sliding-effect"></div>
             <div class="patio-chair"></div>
         </div>
     </div>
 </body>
 </html>
+<!-- total 6 characters -->
